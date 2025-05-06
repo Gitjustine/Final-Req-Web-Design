@@ -1,0 +1,1496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Golden Spoon Catering</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+  body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 10px 0;
+  width: 100%;
+  left: 0;
+  box-sizing: border-box;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  font-family: 'Cinzel', serif;
+  font-size: 28px;
+  margin-right: 60px;
+}
+
+.logo img {
+  width: 60px;
+  height: 60px;
+  margin-right: 15px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+nav a {
+  text-decoration: none;
+  color: black;
+  font-size: 14px;
+  padding: 5px 0;
+}
+
+.nav-item {
+  position: relative;
+}
+
+.nav-item:hover .dropdown {
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  border-radius: 8px;
+  padding: 10px;
+  gap: 10px;
+  z-index: 999;
+}
+
+.dropdown button {
+  background: none; 
+  color: black; 
+  border: none; 
+  padding: 5px 0; 
+  text-align: left;
+  cursor: pointer;
+  font-size: 17px;
+  width: auto; 
+  font-family: 'Playfair Display', serif;
+}
+
+.dropdown button:hover {
+  color: #7d1903fd; 
+  background: none; 
+}
+
+
+.hero {
+  position: relative;
+  text-align: center;
+  color: white;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  z-index: 1;
+  background-image: url('home&about/pic9.png');
+  background-size: cover; 
+  background-position: center; 
+  background-attachment: fixed;
+  margin: 0; 
+  padding: 0;
+}
+
+.hero img {
+  display: none;
+}
+
+.hero-text {
+  font-family: 'Poppins', sans-serif;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.hero-text h1 {
+  font-family: 'Playfair Display', serif;
+  text-shadow: #000000;
+  font-size: 70px;
+  margin: 0;
+}
+
+.hero-subheading {
+  background-color: black;
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border-radius: 40px 1px 40px 1px;
+}
+
+.schedule-button {
+  margin-top: 2rem;
+  background: linear-gradient(to right, #7d1903fd, #7e2200);
+  padding: 0.75rem 1.5rem;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+
+
+   
+.welcome-events-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 6rem 2rem;
+  text-align: center;
+  background-color: #ffffff;
+}
+
+.welcome-text {
+  font-family: 'Poppins', sans-serif;
+  max-width: 700px;
+  text-align: center;
+}
+
+.welcome-text h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 45px;
+  margin-bottom: 30px;
+}
+
+.welcome-text p {
+  font-size: 22px;
+  line-height: 1.6;
+}
+
+.welcome-image {
+  max-width: 400px;
+  border-radius: 10px;
+  margin-top: 3rem;
+}
+
+
+.events-section {
+  width: 100vw; 
+  background-color: #902e03e9; 
+  padding: 8rem 0;
+  text-align: center;
+  margin-left: calc(-50vw + 50%); 
+  margin-right: calc(-50vw + 50%); 
+  margin-top: 5rem;
+  border-top: 5px solid transparent; 
+}
+
+.events-section h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 60px;
+  margin-bottom: 60px;
+  color: #ffffff;
+}
+
+.events-grid {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.event-card {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 250px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.event-card:hover {
+  transform: translateY(-5px);
+}
+
+.event-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.event-card button {
+  all: unset;
+  display: block;
+  width: 100%;
+  padding: 2rem 0;
+  text-align: center;
+  color: black;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.about-section {
+  padding: 0; 
+  background-image: url('home&about/pic5.png');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: white;
+  text-align: center;
+  position: relative;
+  height: 100vh; 
+  width: 100vw;
+  margin: 0; 
+  overflow: hidden; 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+}
+
+.about-content {
+  max-width: 80%; 
+  margin: 0 auto;
+  padding: 3rem;
+  position: relative;
+  border-radius: 10px;
+  text-align: center; 
+}
+
+.about-content h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 80px;
+  margin-bottom: 1rem;
+  text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.822);
+}
+
+.about-content p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 25px;
+  line-height: 1.8;
+  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.84);
+}
+
+
+.mission-vision-section {
+  background-color: #fff;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 4rem 2rem;
+  gap: 2rem;
+  margin-top: -20px;
+ }
+
+.mission, .vision {
+  max-width: 500px;
+  flex: 1 1 400px;
+  text-align: center;
+ }
+
+ .mission h2, .vision h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;
+  margin-bottom: 1rem; 
+  text-transform: lowercase;
+ }
+
+ .mission img, .vision img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+ }
+
+ .mission p, .vision p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  line-height: 1.8;
+ }
+
+
+.contact-intro {
+  background-image: url('contact/office.jpg'); 
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  height: 100vh;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.contact-intro h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 7rem;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+.owners-section {
+  background-color: #5C3317;
+  color: white;
+  padding: 30px 30px 80px;
+  text-align: center;
+}
+
+.owners-section h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 5rem;
+  margin-bottom: 5rem;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+.owners-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+.owner {
+  text-align: center;
+}
+
+.owner img {
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  margin-bottom: 1rem; 
+}
+
+.owner p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.4rem;
+  margin-top: 0; 
+  line-height: 1.2; 
+}
+
+.booking-section {
+  background: #fff;
+  padding: 60px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.booking-container {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  width: 100%;
+  gap: 40px;
+}
+
+.contact-info {
+  flex: 1;
+  max-width: 400px;
+}
+
+.main-logo {
+  width: 400px; 
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.contact-info p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.contact-info img.icon {
+  width: 20px;
+  height: 20px;
+}
+
+.booking-form {
+  flex: 2;
+  max-width: 700px;
+}
+
+.booking-form h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 60px;
+  margin-bottom: 15px;
+}
+
+.booking-form p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.booking-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.booking-form input,
+.booking-form select,
+.booking-form textarea {
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.time-row {
+  display: flex;
+  gap: 10px;
+}
+
+.booking-form button {
+  padding: 10px 20px; 
+  background-color: black;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px; 
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.booking-form button:hover {
+  background-color: #333;
+}
+
+
+section:not(.full-section) {
+  padding: 50px;
+}
+
+.full-section {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+#eventsSection { background-color: #5c3317; }
+
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 70px;
+  text-align: center;
+  margin-bottom: 30px;
+  color: white;
+}
+
+.sections-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 70px;
+  text-align: center;
+  margin-bottom: 30px;
+  color: black;
+}
+
+.events-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.event-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  color: black;
+}
+
+.event-item img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.event-description {
+  max-width: 600px;
+}
+
+.event-item h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.event-description {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+
+.event-item button {
+  background-color: black;
+  color: white;
+  padding: 10px 20px;
+  font-size: 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.event-item button:hover {
+  background-color: #333;
+}
+
+.full-section {
+  min-height: 100vh;
+  width: 100%;
+}
+
+
+.wedding-intro, .birthday-intro, .corporate-intro {
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  height: 100vh;
+  text-align: center;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wedding-intro {
+  background-image: url('wedding picture/background2.jpg');
+}
+
+.birthday-intro {
+  background-image: url('birthday picture/birthdaybackgound2.jpg');
+}
+
+.corporate-intro {
+  background-image: url('corporate picture/corporatebackground2.jpg');
+}
+
+.wedding-details, .birthday-details, .corporate-details {
+  background-color:#5C3317;
+  padding: 100px;
+  color: white;
+  text-align: center;
+  position: relative;
+}
+
+.wedding-intro h1 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 7rem;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+  margin-bottom: 20px;
+}
+
+.wedding-details h2 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 5rem;
+  color: rgb(255, 255, 255);
+  display: inline-block;
+  padding: 0.75em 1.5em;
+  border-radius: 0.5em;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+  margin-bottom: 1rem;
+  position: sticky;
+  top: 0;
+}
+
+.birthday-intro h1 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 7rem;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+  margin-bottom: 20px;
+}
+
+.birthday-details h2 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 5rem;
+  color: rgb(255, 255, 255);
+  display: inline-block;
+  padding: 0.75em 1.5em;
+  border-radius: 0.5em;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+  margin-bottom: 1rem;
+  position: sticky;
+  top: 0;
+}
+
+.corporate-intro h1 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 7rem;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+  margin-bottom: 20px;
+}
+
+.corporate-details h2 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 5rem;
+  color: rgb(255, 255, 255);
+  display: inline-block;
+  padding: 0.75em 1.5em;
+  border-radius: 0.5em;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+  margin-bottom: 1rem;
+  position: sticky;
+  top: 0;
+}
+
+.package-container {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  padding: 50px;
+  background-color: #1f1f1f;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.package-image {
+  flex: 1;
+  min-width: 300px;
+  padding: 20px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.package-image img {
+  width: 90%;
+  height: 90%;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.package-text h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 4rem;
+  margin-bottom: 0.75em;
+}
+
+.wedding-details p,
+.birthday-details p,
+.corporate-details p {
+  font-family: 'Poppins', sans-serif;
+}
+
+.why-choose-us {
+  background-color: #5C3317; 
+  padding: 50px 20px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.why-choose-us h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 4rem;
+  color: white;
+  margin-bottom: 30px;
+}
+
+.why-choose-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  justify-content: center;
+  gap: 30px;
+}
+
+.why-choose-img {
+  flex: 1;
+  max-width: 600px;
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.why-choose-text, .package-text {
+  flex: 1;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.1rem;
+  color: white;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+}
+
+.why-choose-text p {
+  margin-bottom: 1em;
+}
+
+.why-choose-text strong, .package-text strong {
+  font-weight: bold;
+}
+
+.btn-group {
+  margin-top: 30px;
+  display: flex;
+  justify-content: flex-start; 
+  gap: 20px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  background-color: black;
+  color: white;
+  border: none;
+}
+
+.btn:hover {
+  opacity: 0.8;
+}
+
+
+.menu-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  justify-items: center;
+  padding: 20px;
+}
+
+.card {
+  background-color: #5C3317;
+  padding: 20px;
+  border-radius: 12px;
+  width: 280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: white;
+}
+
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.card h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.card .description {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+.card button {
+  background-color: black;
+  color: white;
+  padding: 10px 20px;
+  font-size: 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.card button:hover {
+  background-color: #333;
+}
+
+.packages-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 15px;
+  padding: 100px 20px 20px 20px; 
+}
+
+.packages-card {
+  width: 220px;
+  padding: 15px;
+  border-radius: 20px;
+  margin: 5px;
+  text-align: center;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+
+.packages-card.light {
+  background-color: white;
+  color: black;
+}
+
+.packages-card.dark {
+  background-color:#5C3317;
+  color: white;
+}
+
+.packages-card:hover {
+  transform: translateY(-5px);
+}
+
+.packages-card h2 {
+  margin-bottom: 10px;
+  font-size: 24px;
+}
+
+.packages-card p {
+  font-style: italic;
+}
+
+.packages-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.packages-card ul li {
+  margin: 5px;
+  letter-spacing: 1px;
+}
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <img src="GoldenSpoonLogo.png" alt="Logo">
+      GOLDEN SPOON CATERING
+    </div>
+    <nav class="nav-links">
+      <a href="#" onclick="showHome()">HOME</a>
+      <a href="#" onclick="showAbout()">ABOUT</a>
+      <div class="nav-item">
+        <span style="cursor: pointer;">CATERING</span>
+        <div class="dropdown">
+          <button onclick="showEvents()">Events</button>
+          <button onclick="showMenu()">Menu</button>
+          <button onclick="showPackages()">Packages</button>
+        </div>
+      </div>
+      <a href="#" onclick="showContact()">CONTACT US</a>
+    </nav>
+  </header>
+
+
+<section id="home" class="full-section">
+  <div class="hero">
+    <img src="home&about/pic9.png" alt="Hero Background Food">
+    <div class="hero-text">
+      <h1>Exceptional Catering, Unforgettable Moments</h1>
+      <div class="hero-subheading">From intimate gatherings to grand celebrations</div><br>
+      <button onclick="showContact()" class="schedule-button">Book Now!</button>
+    </div>
+  </div>
+
+  <section class="welcome-events-section">
+    <div class="welcome-text">
+      <h2>"Great food creates unforgettable moments."</h2>
+      <p>Experience catering that delights the senses, brings people together, and makes every event extraordinary.</p>
+    </div>
+    <img class="welcome-image" src="home&about/home1.png" alt="Catering Service">
+
+    <div class="events-section">
+      <h2>Exceptional Catering for Every Occasion</h2>
+      <div class="events-grid">
+        <div class="event-card">
+          <img src="home&about/pic6.png" alt="Birthday Party">
+          <button onclick="showBirthday()">Birthday Party →</button>
+        </div>
+        <div class="event-card">
+          <img src="home&about/pic8.png" alt="Wedding">
+          <button onclick="showWedding()">Wedding →</button>
+        </div>
+        <div class="event-card">
+          <img src="home&about/pic7.png" alt="Corporate Event">
+          <button onclick="showCorporate()">Corporate Event →</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<section id="about" class="full-section">
+  <div class="about-section">
+    <div class="about-content">
+      <h1>About Us</h1>
+      <p>At Golden Spoon Catering, we believe that every event deserves to be unforgettable. With a passion for exceptional food and genuine hospitality, we bring people together through flavors, experiences, and celebrations.</p>
+    </div>
+  </div>
+
+  <section class="mission-vision-section">
+    <div class="mission">
+      <h2>mission</h2>
+      <img src="home&about/pic2.png" alt="Mission Image">
+      <p>We are committed to providing exceptional food, outstanding service, and personalized care, ensuring every event big or small is a true reflection of our clients’ dreams and tastes.</p>
+    </div>
+
+    <div class="vision">
+      <h2>vision</h2>
+      <img src="home&about/pic4.png" alt="Vision Image">
+      <p>To be the leading catering service that transforms every gathering into an extraordinary and unforgettable experience through exceptional cuisine, warm hospitality, and creative presentation.</p>
+    </div>
+  </section>
+</section>
+
+
+  <section id="eventsSection">
+    <div class="section-title">EVENTS</div>
+    <div class="events-container">
+      
+ 
+      <div class="event-item">
+        <div class="event-description">
+          <h1>Wedding</h1>
+          <p>Transform your wedding day into a memorable culinary journey with Golden Spoon Catering. Indulge in a thoughtfully crafted menu that enhances your celebration, showcasing the rich flavors of Filipino cuisine. With every dish, create lasting impressions and unforgettable moments for you and your guests.</p>
+          <button onclick="showWedding()">EXPLORE WEDDING</button>
+        </div>
+        <img src="wedding picture/WeddingBackG1.jpg" alt="Wedding Image">
+      </div>
+  
+  
+      <div class="event-item">
+        <div class="event-description">
+          <h1>Birthday</h1>
+          <p>Elevate your birthday celebration with Golden Spoon Catering. Delight in an exquisite array of Filipino flavors—from sumptuous savory mains to indulgent desserts—designed to turn your special day into an unforgettable feast. Celebrate another year of life surrounded by loved ones and memories that will last a lifetime.</p>
+          <button onclick="showBirthday()">EXPLORE BIRTHDAY</button>
+        </div>
+        <img src="birthday picture/BirthdayBackG1.jpg" alt="Birthday Image">
+      </div>
+  
+
+      <div class="event-item">
+        <div class="event-description">
+          <h1>Corporate Event</h1>
+          <p>Make a lasting impression on your colleagues and clients with a refined and delectable spread from Golden Spoon Catering. Whether hosting an elegant corporate gathering or a laid-back office celebration, our bespoke catering services will enhance the atmosphere, leaving everyone with unforgettable impressions and a taste of excellence.</p>
+          <button onclick="showCorporate()">EXPLORE CORPORATE EVENT</button>
+        </div>
+        <img src="corporate picture/CorporateBackG1.jpg" alt="Corporate Event Image">
+      </div>
+    </div>
+  </section>
+  
+
+<section id="weddingSection" class="full-section">
+    <div class="wedding-intro">
+      <h1>Celebrate Love with Us</h1>
+    </div>
+    <div class="wedding-details">
+      <h2>Your Dream Wedding Starts with Us</h2>
+      <p>We understand that your wedding day is one of the most important days of your life. Our mission is to provide exceptional catering services that will leave you and your guests with unforgettable memories. From intimate gatherings to grand celebrations, we’ve got you covered.</p>
+    </div>
+    <div class="package-container">
+      <div class="package-text">
+        <h2>Wedding Package</h2>
+        <p><strong>Customized Menus: </strong> Curated to reflect your taste and style.</p>
+        <p><strong>Seasonal, Fresh Ingredients: </strong> Ensuring every dish is of the highest quality.</p>
+        <p><strong>Full-Service Catering: </strong> From setup to cleanup, our professional team handles it all.</p>
+        <p><strong>Variety of Cuisine Options: </strong> From traditional Filipino dishes to international cuisine.</p>
+      </div>
+      <div class="package-image">
+        <img src="wedding picture/weddingimage.jpg" alt="Wedding Package">
+      </div>
+    </div>
+  
+
+    <div class="why-choose-us">
+      <h2>Why Choose Us</h2>
+      <div class="why-choose-content">
+        <img src="GoldenSpoonLogo.png" alt="Why Choose Us" class="why-choose-img" />
+        <div class="why-choose-text">
+          <p><strong>Experienced Team:</strong> Our skilled chefs and staff have years of experience in wedding catering.</p>
+          <p><strong>Personalized Service:</strong> We work closely with you to tailor every detail to your preferences.</p>
+          <p><strong>Elegant Presentation:</strong> Our food is not only delicious but also beautifully presented.</p>
+          <p><strong>Flexible Packages:</strong> Options to fit your budget and vision.</p>
+    
+          <div class="btn-group">
+          <button onclick="showEvents()" class="btn btn-secondary">Back to Events</button>
+          <button onclick="showContact()" class="btn btn-primary">Contact Us</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section id="birthdaySection" class="full-section">
+    <div class="birthday-intro">
+      <h1>Celebrate Life with Us</h1>
+    </div>
+    <div class="birthday-details">
+      <h2>Make Your Birthday Unforgettable</h2>
+      <p>From savory dishes to decadent desserts, we ensure your birthday feast is a true celebration of life. Every bite is crafted to perfection, offering a memorable culinary experience for you and your loved ones.</p>
+    </div>
+    <div class="package-container">
+      <div class="package-text">
+        <h2>Birthday Package</h2>
+        <p><strong>Customized Menus: </strong> Curated to reflect your favorite dishes and preferences.</p>
+        <p><strong>Seasonal, Fresh Ingredients: </strong> Every dish is made with the finest and freshest ingredients.</p>
+        <p><strong>Full-Service Catering: </strong> We take care of the cooking, serving, and cleanup for you.</p>
+        <p><strong>Variety of Cuisine Options: </strong> From traditional Filipino favorites to international selections.</p>
+      </div>
+      <div class="package-image">
+        <img src="birthday picture/birthdayimage.jpg" alt="Birthday Package">
+      </div>
+    </div>
+  
+    <div class="why-choose-us">
+      <h2>Why Choose Us</h2>
+      <div class="why-choose-content">
+        <img src="GoldenSpoonLogo.png" alt="Why Choose Us" class="why-choose-img" />
+        <div class="why-choose-text">
+          <p><strong>Experienced Team:</strong> Our skilled chefs and staff have years of experience in catering.</p>
+          <p><strong>Personalized Service:</strong> We work closely with you to tailor every detail to your preferences.</p>
+          <p><strong>Elegant Presentation:</strong> Our food is not only delicious but also beautifully presented.</p>
+          <p><strong>Flexible Packages:</strong> Options to fit your budget and vision.</p>
+
+      <div class="btn-group">
+          <button onclick="showEvents()" class="btn btn-secondary">Back to Events</button>
+          <button onclick="showContact()" class="btn btn-primary">Contact Us</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  </section>
+  
+  <section id="corporateSection" class="full-section">
+    <div class="corporate-intro">
+      <h1>Corporate Excellence with Us</h1>
+    </div>
+    <div class="corporate-details">
+      <h2>Elevate Your Corporate Events</h2>
+      <p>Impress your clients and colleagues with a sophisticated catering service that will elevate any corporate event. From corporate lunches to elegant gala dinners, our bespoke catering services are designed to impress.</p>
+    </div>
+    <div class="package-container">
+      <div class="package-text">
+        <h2>Corporate Package</h2>
+        <p><strong>Customized Menus: </strong> Tailored to suit the nature of your corporate event.</p>
+        <p><strong>Seasonal, Fresh Ingredients: </strong> Every dish is made using the highest quality, freshest ingredients.</p>
+        <p><strong>Full-Service Catering: </strong> We manage everything from setup to cleanup for a hassle-free experience.</p>
+        <p><strong>Variety of Cuisine Options: </strong> Whether traditional Filipino or global cuisines, we've got it covered.</p>
+      </div>
+      <div class="package-image">
+        <img src="corporate picture/corporateimage.jpg" alt="Corporate Package">
+      </div>
+    </div>
+  
+    <div class="why-choose-us">
+      <h2>Why Choose Us</h2>
+      <div class="why-choose-content">
+        <img src="GoldenSpoonLogo.png" alt="Why Choose Us" class="why-choose-img" />
+        <div class="why-choose-text">
+          <p><strong>Experienced Team:</strong> Our skilled chefs and staff have years of experience in corporate catering.</p>
+          <p><strong>Personalized Service:</strong> We work closely with you to tailor every detail to your preferences.</p>
+          <p><strong>Elegant Presentation:</strong> Our food is not only delicious but also beautifully presented.</p>
+          <p><strong>Flexible Packages:</strong> Options to fit your budget and vision.</p>
+    
+      <div class="btn-group">
+          <button onclick="showEvents()" class="btn btn-secondary">Back to Events</button>
+          <button onclick="showContact()" class="btn btn-primary">Contact Us</button>
+        </div>
+      </div>
+     </div>
+    </div>
+  </section>
+  
+
+  <section id="menuSection">
+    <div class="sections-title">MAIN DESHES</div>
+    <div class="menu-container">
+      <div class="card">
+        <img src="pork/Porkpic.jpg" alt="Pork">
+        <h1>PORK</h1>
+        <a href="pork.html"><button>View</button></a>
+      </div>
+      <div class="card">
+        <img src="beef/Beefpic.jpg" alt="Beef">
+        <h1>BEEF</h1>
+        <a href="beef.html"><button>View</button></a>
+      </div>
+      <div class="card">
+        <img src="chicken/Chickenpic.jpg" alt="Chicken">
+        <h1>CHICKEN</h1>
+        <a href="chicken.html"><button>View</button></a>
+      </div>
+      <div class="card">
+        <img src="seaFood/Seafoodpic.jpg" alt="Sea Foods">
+        <h1>SEA FOODS</h1>
+        <a href="seafood.html"><button>View</button></a>
+      </div>
+      <div class="card">
+        <img src="vegetables/Vegetsblespic.jpg" alt="Vegetables">
+        <h1>VEGETABLES</h1>
+        <a href="vegetables.html"><button>View</button></a>
+      </div>
+      <div class="card">
+        <img src="pasta/Pastapic.jpg" alt="Pasta">
+        <h1>PASTA</h1>
+        <a href="pasta.html"><button>View</button></a>
+      </div>
+      <div class="card">
+        <img src="soup/Souppic.jpg" alt="Soup">
+        <h1>SOUP</h1>
+        <a href="soup.html"><button>View</button></a>
+      </div>
+      <div class="card">
+        <img src="dessert/Dessertpic.jpg" alt="Dessert">
+        <h1>DESSERT</h1>
+        <a href="dessert.html"><button>View</button></a>
+      </div>
+      <div class="card">
+        <img src="drinks/Drinkspic.jpg" alt="Drinks">
+        <h1>DRINKS</h1>
+        <a href="drinks.html"><button>View</button></a>
+      </div>
+    </div>
+  </section>
+
+  <section id="packagesSection">
+    <div class="sections-title">PACKAGES</div>
+    <div class="packages-container">
+      <div class="card packages-card light">
+        <h2>3 MAIN COURSE</h2>
+        <p>(MENU PACKAGE)</p>
+        <ul>
+          <li>2 – Meats</li>
+          <li>1 – Vegetable</li>
+          <li>Pasta</li>
+          <li>Soup</li>
+          <li>Dessert</li>
+          <li>Drinks</li>
+        </ul>
+      </div>
+  
+      <div class="card packages-card dark">
+        <h2>4 MAIN COURSE</h2>
+        <p>(MENU PACKAGE)</p>
+        <ul>
+          <li>3 – Meats</li>
+          <li>1 – Vegetable</li>
+          <li>Pasta</li>
+          <li>Soup</li>
+          <li>Dessert</li>
+          <li>Drinks</li>
+        </ul>
+      </div>
+  
+      <div class="card packages-card light">
+        <h2>5 MAIN COURSE</h2>
+        <p>(MENU PACKAGE)</p>
+        <ul>
+          <li>4 – Meats</li>
+          <li>1 – Vegetable</li>
+          <li>Pasta</li>
+          <li>Soup</li>
+          <li>Dessert</li>
+          <li>Drinks</li>
+        </ul>
+      </div>
+  
+      <div class="card packages-card dark">
+        <h2>6 MAIN COURSE</h2>
+        <p>(MENU PACKAGE)</p>
+        <ul>
+          <li>5 – Meats</li>
+          <li>1 – Vegetable</li>
+          <li>Pasta</li>
+          <li>Soup</li>
+          <li>Dessert</li>
+          <li>Drinks</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+ 
+<section id="contactSection" class="full-section">
+  <div class="contact-intro">
+    <h1>Let's Talk</h1>
+  </div>
+
+ 
+  <div class="owners-section">
+    <h2>Owners</h2>
+    <div class="owners-container">
+      <div class="owner">
+        <img src="contact/justine.jpg" alt="Owner 1">
+        <p>JUSTINE BAE JULONGBAYAN</p>
+      </div>
+      <div class="owner">
+        <img src="contact/pauline.jpg" alt="Owner 2">
+        <p>PAULINE DE LEON</p>
+      </div>
+      <div class="owner">
+        <img src="contact/joan.jpg" alt="Owner 3">
+        <p>JAY AN ADVINCULA</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="booking-section">
+    <div class="booking-container">
+
+      <div class="contact-info">
+        <img src="GoldenSpoonLogo.png" alt="Golden Spoon Logo" class="main-logo">
+        <p><img src="contact/gmail-logo-16.png" class="icon"> goldenspoon@gmail.com</p>
+        <p><img src="contact/phone.jpg" class="icon"> 123-456-7890</p>
+        <p><img src="contact/loc.jpg" class="icon"> Tabuating, San Leonardo, Nueva Ecija</p>
+        <p><img src="contact/fb.jpg" class="icon"> @Golden Spoon</p>
+        <p><img src="contact/OIP.jpg" class="icon"> @Golden_Spoon</p>
+      </div>
+
+    
+      <div class="booking-form">
+        <h2>Let’s Make Your Event Extraordinary!</h2>
+        <p>Golden Spoon Catering, we believe that every event starts with your unique vision. Share your ideas and details with us, and we’ll bring your culinary dreams to life for an unforgettable experience!</p>
+
+        <form id="bookingForm">
+          <input type="text" placeholder="Name" required>
+          <input type="email" placeholder="Email Address" required>
+          <input type="tel" placeholder="Phone Number" required>
+          <input type="text" placeholder="Event Location" required>
+
+          <select required>
+            <option value="" disabled selected>Select Event Type</option>
+            <option>Birthday</option>
+            <option>Wedding</option>
+            <option>Corporate Event</option>
+          </select>
+
+          <select required>
+            <option value="" disabled selected>Select Catering Package</option>
+            <option>3 Main Course</option>
+            <option>4 Main Course</option>
+            <option>5 Main Course</option>
+            <option>6 Main Course</option>
+          </select>
+
+          <select required>
+            <option value="" disabled selected>Approx Guest Count</option>
+            <option>100</option>
+            <option>150</option>
+            <option>200</option>
+            <option>350</option>
+          </select>
+
+          <input type="date" required>
+
+          <div class="time-row">
+            <select required>
+              <option disabled selected>Hour</option>
+              <option>1</option><option>2</option><option>3</option><option>4</option>
+              <option>5</option><option>6</option><option>7</option><option>8</option>
+              <option>9</option><option>10</option><option>11</option><option>12</option>
+            </select>
+
+            <select required>
+              <option disabled selected>Minutes</option>
+              <option>10</option><option>20</option><option>30</option>
+              <option>40</option><option>50</option><option>60</option>
+            </select>
+
+            <select required>
+              <option disabled selected>AM/PM</option>
+              <option>AM</option>
+              <option>PM</option>
+            </select>
+          </div>
+
+          <textarea placeholder="Message" rows="5"></textarea>
+
+          <button type="submit">Book your Reservations</button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+  
+
+  <script>
+    let userHasClicked = false;
+  
+    function showHome() {
+      userHasClicked = true;
+      document.getElementById('home').style.display = 'block';
+      document.getElementById('about').style.display = 'none';
+      document.getElementById('eventsSection').style.display = 'none';
+      document.getElementById('menuSection').style.display = 'none';
+      document.getElementById('packagesSection').style.display = 'none';
+      document.getElementById('weddingSection').style.display = 'none';
+      document.getElementById('birthdaySection').style.display = 'none';
+      document.getElementById('corporateSection').style.display = 'none';
+      document.getElementById("contactSection").style.display = "none";
+    }
+  
+    function showAbout() { 
+      userHasClicked = true;
+      document.getElementById('home').style.display = "none";
+      document.getElementById('about').style.display = 'block';
+      document.getElementById('eventsSection').style.display = "none";
+      document.getElementById('menuSection').style.display = 'none';
+      document.getElementById('packagesSection').style.display = 'none';
+      document.getElementById('weddingSection').style.display = "none";
+      document.getElementById('birthdaySection').style.display = "none";
+      document.getElementById('corporateSection').style.display = "none";
+      document.getElementById('contactSection').style.display = "none"; 
+    }
+  
+    function showContact() { 
+      userHasClicked = true;
+      document.getElementById('home').style.display = "none";
+      document.getElementById('about').style.display = 'none';
+      document.getElementById('eventsSection').style.display = "none";
+      document.getElementById('menuSection').style.display = 'none';
+      document.getElementById('packagesSection').style.display = 'none';
+      document.getElementById('weddingSection').style.display = "none";
+      document.getElementById('birthdaySection').style.display = "none";
+      document.getElementById('corporateSection').style.display = "none";
+      document.getElementById('contactSection').style.display = "block";
+    }
+  
+    function showEvents() {
+      userHasClicked = true;
+      document.getElementById('home').style.display = 'none';
+      document.getElementById('about').style.display = 'none';
+      document.getElementById('eventsSection').style.display = 'block';
+      document.getElementById('menuSection').style.display = 'none';
+      document.getElementById('packagesSection').style.display = 'none'; 
+      document.getElementById('weddingSection').style.display = 'none';
+      document.getElementById('birthdaySection').style.display = 'none';
+      document.getElementById('corporateSection').style.display = 'none';
+      document.getElementById("contactSection").style.display = "none";
+    }
+  
+    function showMenu() {
+      userHasClicked = true;
+      document.getElementById('home').style.display = 'none';
+      document.getElementById('about').style.display = 'none';
+      document.getElementById('eventsSection').style.display = 'none';
+      document.getElementById('menuSection').style.display = 'block';
+      document.getElementById('packagesSection').style.display = 'none';
+      document.getElementById('weddingSection').style.display = 'none';
+      document.getElementById('birthdaySection').style.display = 'none';
+      document.getElementById('corporateSection').style.display = 'none';
+      document.getElementById("contactSection").style.display = "none";
+    }
+  
+    function showPackages() {
+      userHasClicked = true;
+      document.getElementById('home').style.display = 'none';
+      document.getElementById('about').style.display = 'none';
+      document.getElementById('eventsSection').style.display = 'none';
+      document.getElementById('menuSection').style.display = 'none';
+      document.getElementById('packagesSection').style.display = 'block';
+      document.getElementById('weddingSection').style.display = 'none';
+      document.getElementById('birthdaySection').style.display = 'none';
+      document.getElementById('corporateSection').style.display = 'none';
+      document.getElementById("contactSection").style.display = "none";
+    }
+  
+    function showWedding() {
+      userHasClicked = true;
+      document.getElementById('home').style.display = 'none';
+      document.getElementById('about').style.display = 'none';
+      document.getElementById('eventsSection').style.display = 'none';
+      document.getElementById('menuSection').style.display = 'none';
+      document.getElementById('packagesSection').style.display = 'none';
+      document.getElementById('weddingSection').style.display = 'block';
+      document.getElementById('birthdaySection').style.display = 'none';
+      document.getElementById('corporateSection').style.display = 'none';
+      document.getElementById("contactSection").style.display = "none";
+    }
+  
+    function showBirthday() {
+      userHasClicked = true;
+      document.getElementById('home').style.display = 'none';
+      document.getElementById('about').style.display = 'none';
+      document.getElementById('eventsSection').style.display = 'none';
+      document.getElementById('menuSection').style.display = 'none';
+      document.getElementById('packagesSection').style.display = 'none';
+      document.getElementById('weddingSection').style.display = 'none';
+      document.getElementById('birthdaySection').style.display = 'block';
+      document.getElementById('corporateSection').style.display = 'none';
+      document.getElementById("contactSection").style.display = "none";
+    }
+  
+    function showCorporate() {
+      userHasClicked = true;
+      document.getElementById('home').style.display = 'none';
+      document.getElementById('about').style.display = 'none';
+      document.getElementById('eventsSection').style.display = 'none';
+      document.getElementById('menuSection').style.display = 'none';
+      document.getElementById('packagesSection').style.display = 'none';
+      document.getElementById('weddingSection').style.display = 'none';
+      document.getElementById('birthdaySection').style.display = 'none';
+      document.getElementById('corporateSection').style.display = 'block';
+      document.getElementById("contactSection").style.display = "none";
+    }
+
+    document.getElementById('bookingForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      alert('Reservation sent! Please wait for our call or contact us directly.');
+      showHome();
+    });
+  
+    window.onload = function() {
+      const hash = window.location.hash;
+      if (!userHasClicked) {
+        if (hash === "#menu") {
+          showMenu();
+        } else {
+          showHome();
+        }
+      }
+    };
+  </script>
+  
+</body>
+</html>
